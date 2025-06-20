@@ -3,6 +3,8 @@
 [![Android](https://img.shields.io/badge/Platform-Android-green.svg)](https://developer.android.com/)
 [![Firebase](https://img.shields.io/badge/Backend-Firebase-orange.svg)](https://firebase.google.com/)
 [![ESP32](https://img.shields.io/badge/Hardware-ESP32-blue.svg)](https://www.espressif.com/en/products/socs/esp32)
+[![Development](https://img.shields.io/badge/Status-In%20Development-red.svg)](#project-status)
+[![Updates](https://img.shields.io/badge/Updates-Periodic-brightgreen.svg)](#project-status)
 [![License](https://img.shields.io/badge/License-Academic-yellow.svg)](#)
 
 > **Smart Table Status Indicator Berbasis ESP32 untuk Efisiensi Manajemen Meja pada Restoran Self-Serve**
@@ -13,6 +15,7 @@ An innovative Android application designed to revolutionize table management in 
 
 - [About](#about)
 - [Features](#features)
+- [Project Status](#project-status)
 - [Screenshots](#screenshots)
 - [System Architecture](#system-architecture)
 - [Prerequisites](#prerequisites)
@@ -70,9 +73,32 @@ Our smart system provides:
 - **Settings**: App configuration and Firebase connection testing
 - **Profile**: Staff profile management with image upload
 
+## 🚧 Project Status
+
+> **⚠️ This is an ongoing academic project under active development!**
+
+### Current Status
+- 🔄 **In Development**: This project is actively being developed as part of a thesis research
+- 📱 **Prototype Stage**: The Android application is functional but may contain experimental features
+- 🔧 **Periodic Updates**: The codebase is regularly updated with improvements and new features
+- 📋 **Academic Purpose**: Primary focus is on research and educational objectives
+
+### 🎯 For Users & Reviewers
+**Want to try the app without the complexity of Android Studio setup?**
+- 📱 **APK Releases**: Check the [Releases](https://github.com/avynalaa/smarttableindicator/releases) section for downloadable APK files *(coming soon)*
+- 🎥 **Demo Videos**: Watch functionality demonstrations *(coming soon)*
+- 📊 **Live Demo**: Contact the author for demonstration sessions
+
+Setting up Android Studio, SDK, and emulators just to test this app is honestly overkill for most users! I'll be adding easier ways to experience the project as development progresses.
+
+### 📅 Update Schedule
+- **Weekly**: Bug fixes and minor improvements
+- **Bi-weekly**: Feature additions and enhancements
+- **Monthly**: Major updates and documentation improvements
+
 ## 📸 Screenshots
 
-*Screenshots coming soon...*
+*Screenshots and demo materials coming soon...*
 
 ## 🏗️ System Architecture
 
@@ -100,23 +126,27 @@ Before you begin, ensure you have the following installed:
 
 ## 📦 Installation
 
-### 1. Clone the Repository
+> **💡 New Here?** If you just want to try the app, skip the complex setup below and check the [Project Status](#project-status) section for easier alternatives!
+
+### For Developers & Contributors
+
+#### 1. Clone the Repository
 ```bash
 git clone https://github.com/avynalaa/smarttableindicator.git
 cd smarttableindicator
 ```
 
-### 2. Open in Android Studio
+#### 2. Open in Android Studio
 1. Launch Android Studio
 2. Select "Open an existing project"
 3. Navigate to the cloned repository folder
 4. Select the `SmartTableIndicator` directory
 
-### 3. Sync Dependencies
+#### 3. Sync Dependencies
 - Android Studio will automatically sync Gradle dependencies
 - If not, click "Sync Now" when prompted
 
-### 4. Build the Project
+#### 4. Build the Project
 ```bash
 ./gradlew build
 ```
@@ -269,6 +299,8 @@ SmartTableIndicator/
 
 ## 🤝 Contributing
 
+> **📝 Active Development Notice**: This project is under active development with regular updates. Check the latest commits before contributing to avoid conflicts!
+
 This project is part of an academic thesis. While contributions are welcome for educational purposes, please note:
 
 1. **Fork** the repository
@@ -329,9 +361,12 @@ This project is developed for academic purposes as part of a university thesis. 
 ### 📞 Support
 
 For questions, issues, or academic inquiries, please:
-1. Create an issue in this repository
-2. Contact the author via email
-3. Refer to the Help section within the app
+1. **Create an issue** in this repository (fastest response for bugs/features)
+2. **Contact the author** via email for academic or collaboration inquiries
+3. **Check recent commits** - your issue might already be fixed in the latest update!
+4. **Refer to the Help section** within the app for basic troubleshooting
+
+> **⏰ Response Time**: Since this is an active project, expect faster responses than typical academic repositories!
 
 ---
 
