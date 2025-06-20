@@ -81,4 +81,8 @@ lint/intermediates/
 lint/generated/
 lint/outputs/
 lint/tmp/
-# lint/reports/ 
+# lint/reports/
+
+# Project documentation files (hidden from repository)
+PROJECT_STRUCTURE.md
+CHANGELOG.md 
