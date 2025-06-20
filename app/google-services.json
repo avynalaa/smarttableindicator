@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "51245883659",
+    "firebase_url": "https://status-table-indicator-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "status-table-indicator",
+    "storage_bucket": "status-table-indicator.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:51245883659:android:e2b6d1ae4a8c14d173020e",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqyC3Ai8QZXxHUC749L3Jpk-HHhptxuJ8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

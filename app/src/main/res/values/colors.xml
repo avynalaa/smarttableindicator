@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="table_available">#B0BEC5</color>
+    <color name="table_occupied_on">#39FF14</color>  <!-- bright neon green -->
+    <color name="table_dirty_on">#FF1744</color>     <!-- bright red -->
+    <color name="table_occupied_off">#16B600</color> <!-- dimmer green -->
+    <color name="table_dirty_off">#B30000</color>    <!-- dimmer red -->
+    <color name="teal_200">#03DAC5</color>
+</resources>
