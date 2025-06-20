@@ -62,9 +62,8 @@ public class NotificationHelper {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel channel = new NotificationChannel(Constants.TABLE_STATUS_CHANNEL_ID,
                     CHANNEL_NAME,
-                    NotificationManager.IMPORTANCE_HIGH); // High importance for sound & heads-up
+                    NotificationManager.IMPORTANCE_HIGH);
             channel.setDescription(CHANNEL_DESCRIPTION);
-            // Optional: Configure light, vibration (channel.enableLights(true); channel.setLightColor(Color.RED); etc.)
             notificationManager.createNotificationChannel(channel);
             Log.d(TAG, "Notification channel created/ensured: " + Constants.TABLE_STATUS_CHANNEL_ID);
         }

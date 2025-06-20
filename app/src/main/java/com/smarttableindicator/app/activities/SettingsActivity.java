@@ -8,7 +8,7 @@ import android.content.res.Configuration;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.view.MenuItem; // For Up button
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -43,17 +43,15 @@ public class SettingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        // Set up the action bar
         if (getSupportActionBar() != null) {
             getSupportActionBar().setTitle("Settings");
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true); // Show back arrow
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
         textViewFirebaseProjectId = findViewById(R.id.textViewFirebaseProjectId);
         buttonTestFirebase = findViewById(R.id.buttonTestFirebase);
         textViewFirebaseTestStatus = findViewById(R.id.textViewFirebaseTestStatus);
 
-        // Display Firebase Project ID
         try {
             String projectId = FirebaseApp.getInstance().getOptions().getProjectId();
             if (projectId != null && !projectId.isEmpty()) {
@@ -76,16 +74,16 @@ public class SettingsActivity extends AppCompatActivity {
         loadAndSetCurrentThemeRadioSelection();
 
         radioGroupTheme.setOnCheckedChangeListener((group, checkedId) -> {
-            int newThemeMode = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM; // Default
+            int newThemeMode = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
 
             if (checkedId == R.id.radioButtonLight) {
-                newThemeMode = AppCompatDelegate.MODE_NIGHT_NO; // Light Mode
+                newThemeMode = AppCompatDelegate.MODE_NIGHT_NO;
                 Log.d(TAG, "Theme changed to: Light Mode");
             } else if (checkedId == R.id.radioButtonDark) {
-                newThemeMode = AppCompatDelegate.MODE_NIGHT_YES; // Dark Mode
+                newThemeMode = AppCompatDelegate.MODE_NIGHT_YES;
                 Log.d(TAG, "Theme changed to: Dark Mode");
             } else if (checkedId == R.id.radioButtonSystem) {
-                newThemeMode = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM; // Follow System
+                newThemeMode = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
                 Log.d(TAG, "Theme changed to: Follow System");
             }
 
@@ -137,7 +135,7 @@ public class SettingsActivity extends AppCompatActivity {
                         Toast.makeText(SettingsActivity.this, "Firebase test: Write error.", Toast.LENGTH_LONG).show();
                         Log.e(TAG, "Firebase write error: " + e.getMessage());
                     });
-        } catch (Exception e) { // Catch broader exceptions like Firebase not initialized
+        } catch (Exception e) {
             String errorMsg = "Test failed: Exception during Firebase init/operation. " + e.getMessage();
             textViewFirebaseTestStatus.setText(errorMsg);
             Toast.makeText(SettingsActivity.this, "Firebase operation error.", Toast.LENGTH_LONG).show();
@@ -147,25 +145,22 @@ public class SettingsActivity extends AppCompatActivity {
 
     private void loadAndSetCurrentThemeRadioSelection() {
         SharedPreferences prefs = getSharedPreferences(Constants.THEME_PREF_NAME, MODE_PRIVATE);
-        // Get saved mode, default to MODE_NIGHT_FOLLOW_SYSTEM if nothing is saved
         int savedNightMode = prefs.getInt(Constants.KEY_THEME, AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
 
         if (savedNightMode == AppCompatDelegate.MODE_NIGHT_NO) {
             radioButtonLight.setChecked(true);
         } else if (savedNightMode == AppCompatDelegate.MODE_NIGHT_YES) {
             radioButtonDark.setChecked(true);
-        } else { // MODE_NIGHT_FOLLOW_SYSTEM or MODE_NIGHT_UNSPECIFIED
+        } else {
             radioButtonSystem.setChecked(true);
         }
         Log.d(TAG, "Loaded theme preference and set radio button: " + savedNightMode);
     }
 
-    // Handle the Up button (back arrow) in the ActionBar
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
-            // NavUtils.navigateUpFromSameTask(this); // This is one way
-            finish(); // Or simply finish the activity to go back
+            finish();
             return true;
         }
         return super.onOptionsItemSelected(item);

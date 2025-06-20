@@ -44,7 +44,7 @@ public class TableAdapter extends RecyclerView.Adapter<TableAdapter.TableViewHol
                 context.getString(R.string.table_number, table.getTableNumber())
         );
 
-        // Cancel any previous animation to prevent memory leaks
+
         if (holder.colorAnimator != null) {
             holder.colorAnimator.cancel();
             holder.colorAnimator = null;
@@ -57,14 +57,13 @@ public class TableAdapter extends RecyclerView.Adapter<TableAdapter.TableViewHol
             if (table.getStatus() == TableModel.Status.OCCUPIED) {
                 colorOn = ContextCompat.getColor(context, R.color.table_occupied_on);
                 colorOff = ContextCompat.getColor(context, R.color.table_occupied_off);
-            } else { // DIRTY
+            } else {
                 colorOn = ContextCompat.getColor(context, R.color.table_dirty_on);
                 colorOff = ContextCompat.getColor(context, R.color.table_dirty_off);
             }
 
-            // Animate between colorOff and colorOn
             ValueAnimator animator = ValueAnimator.ofFloat(0f, 1f);
-            animator.setDuration(Constants.ANIMATION_DURATION_MS); // ms, adjust for faster/slower pulse
+            animator.setDuration(Constants.ANIMATION_DURATION_MS);
             animator.setRepeatMode(ValueAnimator.REVERSE);
             animator.setRepeatCount(ValueAnimator.INFINITE);
             animator.addUpdateListener(animation -> {
@@ -91,7 +90,7 @@ public class TableAdapter extends RecyclerView.Adapter<TableAdapter.TableViewHol
         return tableList.size();
     }
 
-    // Helper to blend two colors
+
     private int blendColors(int colorFrom, int colorTo, float ratio) {
         final float inverseRatio = 1f - ratio;
         float r = Color.red(colorFrom) * inverseRatio + Color.red(colorTo) * ratio;
@@ -103,7 +102,7 @@ public class TableAdapter extends RecyclerView.Adapter<TableAdapter.TableViewHol
     public static class TableViewHolder extends RecyclerView.ViewHolder {
         ImageView imageViewStatus;
         TextView textViewTableNumber;
-        ValueAnimator colorAnimator; // Add this to keep track of the animator
+        ValueAnimator colorAnimator;
 
         public TableViewHolder(@NonNull View itemView) {
             super(itemView);

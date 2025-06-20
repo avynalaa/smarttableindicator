@@ -12,17 +12,14 @@ public class ValidationUtils {
     
     private static final String TAG = "ValidationUtils";
     
-    // Validation constants
     private static final int MIN_STAFF_ID_LENGTH = 3;
     private static final int MAX_STAFF_ID_LENGTH = 20;
     private static final int MIN_PASSWORD_LENGTH = 6;
     private static final int MAX_PASSWORD_LENGTH = 50;
     
-    // Regex patterns for validation
     private static final Pattern STAFF_ID_PATTERN = Pattern.compile("^[a-zA-Z0-9_-]+$");
     private static final Pattern SAFE_TEXT_PATTERN = Pattern.compile("^[a-zA-Z0-9\\s._-]+$");
     
-    // Private constructor to prevent instantiation
     private ValidationUtils() {}
     
     /**
@@ -57,15 +54,12 @@ public class ValidationUtils {
     public static ValidationResult validateStaffId(String staffId) {
         Log.d(TAG, "Validating staff ID: " + (staffId != null ? staffId.length() + " characters" : "null"));
         
-        // Check for null or empty
         if (TextUtils.isEmpty(staffId)) {
             return ValidationResult.error("Staff ID tidak boleh kosong");
         }
         
-        // Trim whitespace
         staffId = staffId.trim();
         
-        // Check length
         if (staffId.length() < MIN_STAFF_ID_LENGTH) {
             return ValidationResult.error("Staff ID minimal " + MIN_STAFF_ID_LENGTH + " karakter");
         }
@@ -74,7 +68,6 @@ public class ValidationUtils {
             return ValidationResult.error("Staff ID maksimal " + MAX_STAFF_ID_LENGTH + " karakter");
         }
         
-        // Check format (alphanumeric, underscore, hyphen only)
         if (!STAFF_ID_PATTERN.matcher(staffId).matches()) {
             return ValidationResult.error("Staff ID hanya boleh berisi huruf, angka, underscore, dan strip");
         }
@@ -91,12 +84,10 @@ public class ValidationUtils {
     public static ValidationResult validatePassword(String password) {
         Log.d(TAG, "Validating password: " + (password != null ? password.length() + " characters" : "null"));
         
-        // Check for null or empty
         if (TextUtils.isEmpty(password)) {
             return ValidationResult.error("Password tidak boleh kosong");
         }
         
-        // Check length
         if (password.length() < MIN_PASSWORD_LENGTH) {
             return ValidationResult.error("Password minimal " + MIN_PASSWORD_LENGTH + " karakter");
         }
@@ -105,7 +96,6 @@ public class ValidationUtils {
             return ValidationResult.error("Password maksimal " + MAX_PASSWORD_LENGTH + " karakter");
         }
         
-        // Check for whitespace at start/end
         if (!password.equals(password.trim())) {
             return ValidationResult.error("Password tidak boleh dimulai atau diakhiri dengan spasi");
         }
@@ -124,17 +114,14 @@ public class ValidationUtils {
     public static ValidationResult validateSafeText(String text, String fieldName, int maxLength) {
         Log.d(TAG, "Validating " + fieldName + ": " + (text != null ? text.length() + " characters" : "null"));
         
-        // Allow empty for optional fields
         if (TextUtils.isEmpty(text)) {
             return ValidationResult.success();
         }
         
-        // Check length
         if (text.length() > maxLength) {
             return ValidationResult.error(fieldName + " maksimal " + maxLength + " karakter");
         }
         
-        // Check for potentially dangerous characters
         if (!SAFE_TEXT_PATTERN.matcher(text).matches()) {
             return ValidationResult.error(fieldName + " mengandung karakter yang tidak diizinkan");
         }
@@ -185,9 +172,8 @@ public class ValidationUtils {
             return input;
         }
         
-        // Remove potential script injection attempts
         return input.trim()
-                   .replaceAll("[<>\"'&]", "") // Remove HTML/XML special chars
-                   .replaceAll("\\s+", " ");   // Normalize whitespace
+                   .replaceAll("[<>\"'&]", "")
+                   .replaceAll("\\s+", " ");
     }
 } 

@@ -12,11 +12,9 @@ public class SmartTableIndicatorApp extends Application {
     public void onCreate() {
         super.onCreate();
 
-        // Load the saved theme preference
         SharedPreferences prefs = getSharedPreferences(SettingsActivity.THEME_PREF_NAME, MODE_PRIVATE);
         int currentNightMode = prefs.getInt(SettingsActivity.KEY_THEME, AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
 
-        // Apply the theme preference
         AppCompatDelegate.setDefaultNightMode(currentNightMode);
 
         FirebaseInstallations.getInstance().getId().addOnCompleteListener(task -> {

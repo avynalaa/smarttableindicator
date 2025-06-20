@@ -31,7 +31,7 @@ public class SmartTableMessagingService extends FirebaseMessagingService {
 
         Log.d(TAG, "From: " + remoteMessage.getFrom());
 
-        // Check if message contains a data payload.
+
         if (remoteMessage.getData().size() > 0) {
             Log.d(TAG, "Message data payload: " + remoteMessage.getData());
         }
@@ -46,7 +46,7 @@ public class SmartTableMessagingService extends FirebaseMessagingService {
     public void onNewToken(@NonNull String token) {
         super.onNewToken(token);
         Log.d(TAG, "Refreshed token: " + token);
-        // Handle token refresh logic here if needed
+
     }
 
     private void sendNotification(String messageTitle, String messageBody) {

@@ -14,7 +14,6 @@ public class FirebaseErrorHandler {
     
     private static final String TAG = "FirebaseErrorHandler";
     
-    // Error categories for better handling
     public enum ErrorCategory {
         NETWORK_ERROR,
         PERMISSION_ERROR,
@@ -23,7 +22,6 @@ public class FirebaseErrorHandler {
         UNKNOWN_ERROR
     }
     
-    // Error result class
     public static class ErrorResult {
         private final ErrorCategory category;
         private final String userMessage;
@@ -211,7 +209,6 @@ public class FirebaseErrorHandler {
             );
         }
         
-        // Default case for unknown exceptions
         return new ErrorResult(
             ErrorCategory.UNKNOWN_ERROR,
             "Terjadi kesalahan sistem. Silakan coba lagi atau restart aplikasi.",
@@ -232,10 +229,8 @@ public class FirebaseErrorHandler {
             return;
         }
         
-        // Show user-friendly message
         Toast.makeText(context, errorResult.getUserMessage(), Toast.LENGTH_LONG).show();
         
-        // Log technical details for debugging
         Log.e(TAG, "Error shown to user - Category: " + errorResult.getCategory() + 
                   ", Technical: " + errorResult.getTechnicalMessage() + 
                   ", Retryable: " + errorResult.isRetryable());
@@ -266,7 +261,6 @@ public class FirebaseErrorHandler {
             return false;
         }
         
-        // Don't retry permission or authentication errors
         if (errorResult.getCategory() == ErrorCategory.PERMISSION_ERROR || 
             errorResult.getCategory() == ErrorCategory.AUTHENTICATION_ERROR) {
             return false;
@@ -282,8 +276,6 @@ public class FirebaseErrorHandler {
      * @return Calculated delay in milliseconds
      */
     public static long calculateRetryDelay(int attemptCount, long baseDelayMs) {
-        // Exponential backoff: baseDelay * (2^attemptCount)
-        // Max delay capped at 30 seconds
         long delay = baseDelayMs * (1L << Math.min(attemptCount, 4));
         return Math.min(delay, 30000);
     }

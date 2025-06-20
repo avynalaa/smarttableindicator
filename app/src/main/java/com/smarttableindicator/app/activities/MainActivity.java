@@ -200,11 +200,8 @@ public class MainActivity extends AppCompatActivity {
                         Log.w("MyFCMToken", "Fetching FCM registration token failed", task.getException());
                         return;
                     }
-                    // Get new FCM registration token
                     String token = task.getResult();
-                    // Log and toast
                     Log.d("MyFCMToken", "Current FCM Token: " + token);
-                    // Toast.makeText(MainActivity.this, "FCM Token: " + token, Toast.LENGTH_SHORT).show(); // If in Activity
                 });
     }
 
@@ -271,7 +268,6 @@ public class MainActivity extends AppCompatActivity {
                 isNetworkAvailable = true;
                 runOnUiThread(() -> {
                     Toast.makeText(MainActivity.this, "Koneksi internet tersedia", Toast.LENGTH_SHORT).show();
-                    // Retry Firebase connection if it was previously failed
                     if (tablesDatabaseReference == null || tablesChildEventListener == null) {
                         setupFirebaseTableListener();
                     }
@@ -303,7 +299,6 @@ public class MainActivity extends AppCompatActivity {
     private void setupFirebaseTableListener() {
         Log.d(TAG, "setupFirebaseTableListener: Initializing Firebase listener for /" + Constants.FIREBASE_TABLES_PATH);
         
-        // Check network connectivity before attempting Firebase connection
         if (!isNetworkAvailable) {
             Log.w(TAG, "No network available, skipping Firebase setup");
             Toast.makeText(this, FirebaseErrorHandler.getNetworkErrorMessage(false), Toast.LENGTH_LONG).show();
@@ -426,15 +421,12 @@ public class MainActivity extends AppCompatActivity {
                 public void onCancelled(@NonNull DatabaseError databaseError) {
                     Log.e(TAG, "Firebase ChildEventListener was cancelled.", databaseError.toException());
                     
-                    // Use our centralized error handler
                     FirebaseErrorHandler.ErrorResult errorResult = FirebaseErrorHandler.handleDatabaseError(databaseError);
                     FirebaseErrorHandler.showErrorToUser(MainActivity.this, errorResult);
                     
-                    // If it's a retryable error and we have network, attempt to reconnect
                     if (errorResult.isRetryable() && isNetworkAvailable) {
                         Log.d(TAG, "Attempting to reconnect Firebase listener in " + errorResult.getRetryDelayMs() + "ms");
                         
-                        // Retry after delay
                         new android.os.Handler(getMainLooper()).postDelayed(() -> {
                             Log.d(TAG, "Retrying Firebase connection");
                             setupFirebaseTableListener();
@@ -455,7 +447,6 @@ public class MainActivity extends AppCompatActivity {
             FirebaseErrorHandler.ErrorResult errorResult = FirebaseErrorHandler.handleException(e);
             FirebaseErrorHandler.showErrorToUser(this, errorResult);
             
-            // Retry if appropriate
             if (errorResult.isRetryable() && isNetworkAvailable) {
                 new android.os.Handler(getMainLooper()).postDelayed(() -> {
                     Log.d(TAG, "Retrying Firebase setup after exception");
@@ -475,7 +466,7 @@ public class MainActivity extends AppCompatActivity {
                 return TableModel.Status.OCCUPIED;
             case Constants.STATUS_DIRTY:
                 return TableModel.Status.DIRTY;
-            case "CLEAN": // Firebase might use CLEAN, but we map it to AVAILABLE
+            case "CLEAN":
             case Constants.STATUS_AVAILABLE:
                 return TableModel.Status.AVAILABLE;
             default:
@@ -487,9 +478,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        // This method is now OBSOLETE for image picking due to ActivityResultLauncher.
-        // However, if you have OTHER uses of startActivityForResult, their logic would remain here.
-        // For now, we can leave it empty or log if it's unexpectedly called for image picking.
         Log.d(TAG, "onActivityResult (DEPRECATED for image picking): requestCode=" + requestCode + ", resultCode=" + resultCode);
     }
 
@@ -522,14 +510,12 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
         Log.d(TAG, "onDestroy: Lifecycle event. Cleaning up resources.");
         
-        // Clean up Firebase listener
         if (tablesDatabaseReference != null && tablesChildEventListener != null) {
             tablesDatabaseReference.removeEventListener(tablesChildEventListener);
             tablesChildEventListener = null;
             Log.i(TAG, "onDestroy: Firebase ChildEventListener removed.");
         }
         
-        // Clean up network monitoring
         if (networkManager != null) {
             networkManager.stopNetworkMonitoring();
             networkManager = null;

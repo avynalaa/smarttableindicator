@@ -1,6 +1,5 @@
 plugins {
     alias(libs.plugins.android.application)
-    // ADD THIS LINE to apply the Google Services plugin
     id("com.google.gms.google-services")
 }
 
@@ -32,7 +31,7 @@ android {
         targetCompatibility = JavaVersion.VERSION_11
     }
     buildFeatures {
-        viewBinding = true // Keep this if you're using view binding
+        viewBinding = true
     }
 }
 
@@ -46,8 +45,7 @@ dependencies {
     implementation(libs.activity)
     implementation("de.hdodenhof:circleimageview:3.1.0")
 
-    // Firebase
-    implementation(platform("com.google.firebase:firebase-bom:33.13.0")) // Updated your BoM version here
+    implementation(platform("com.google.firebase:firebase-bom:33.13.0"))
     implementation("com.google.firebase:firebase-analytics-ktx")
     implementation("com.google.firebase:firebase-database-ktx")
     implementation("com.google.firebase:firebase-messaging-ktx")

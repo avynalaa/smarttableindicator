@@ -33,7 +33,6 @@ public class LoginActivity extends AppCompatActivity {
         buttonLogin = findViewById(R.id.buttonLogin);
 
 
-        // Check if already logged in
         SharedPreferences prefs = getSharedPreferences(Constants.PREFS_NAME, MODE_PRIVATE);
         boolean loggedIn = prefs.getBoolean(Constants.KEY_LOGGED_IN_FLAG, false);
         if (loggedIn) {
@@ -59,15 +58,12 @@ public class LoginActivity extends AppCompatActivity {
     private void performLogin() {
         Log.d(TAG, "Login attempt initiated");
         
-        // Get input values
         String staffId = editTextStaffId.getText().toString();
         String password = editTextPassword.getText().toString();
         
-        // Disable login button to prevent multiple clicks
         buttonLogin.setEnabled(false);
         buttonLogin.setText("Memproses...");
         
-        // Validate staff ID
         ValidationUtils.ValidationResult staffIdValidation = ValidationUtils.validateStaffId(staffId);
         if (!staffIdValidation.isValid()) {
             showValidationError(staffIdValidation.getErrorMessage());
@@ -76,7 +72,6 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
         
-        // Validate password
         ValidationUtils.ValidationResult passwordValidation = ValidationUtils.validatePassword(password);
         if (!passwordValidation.isValid()) {
             showValidationError(passwordValidation.getErrorMessage());
@@ -85,13 +80,10 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
         
-        // Sanitize inputs for security
         staffId = ValidationUtils.sanitizeInput(staffId.trim());
-        password = password.trim(); // Don't sanitize password content, just trim
+        password = password.trim();
         
         Log.d(TAG, "Input validation passed for staff ID: " + staffId);
-        
-        // Perform authentication
         authenticateUser(staffId, password);
     }
     
@@ -104,7 +96,6 @@ public class LoginActivity extends AppCompatActivity {
         Log.d(TAG, "Authenticating user: " + staffId);
         
         try {
-            // DEMO Login check - TODO: Replace with proper authentication
             if (staffId.equals(Constants.DEMO_STAFF_ID) && password.equals(Constants.DEMO_PASSWORD)) {
                 Log.d(TAG, "Authentication successful for staff ID: " + staffId);
                 onLoginSuccess(staffId);
@@ -126,7 +117,6 @@ public class LoginActivity extends AppCompatActivity {
         Log.d(TAG, "Processing successful login for: " + staffId);
         
         try {
-            // Save login state in SharedPreferences
             SharedPreferences prefs = getSharedPreferences(Constants.PREFS_NAME, MODE_PRIVATE);
             SharedPreferences.Editor editor = prefs.edit();
             
@@ -134,14 +124,12 @@ public class LoginActivity extends AppCompatActivity {
             editor.putString(Constants.KEY_STAFF_ID, staffId);
             editor.putString(Constants.KEY_STAFF_NAME, "Staff " + staffId);
             
-            // Use commit() instead of apply() to ensure data is saved before proceeding
             boolean saved = editor.commit();
             
             if (saved) {
                 Log.d(TAG, "Login state saved successfully");
                 Toast.makeText(this, "Login berhasil! Selamat datang, " + staffId, Toast.LENGTH_SHORT).show();
                 
-                // Navigate to main activity
                 goToMain();
                 finish();
             } else {
@@ -165,7 +153,6 @@ public class LoginActivity extends AppCompatActivity {
         showValidationError(errorMessage);
         resetLoginButton();
         
-        // Clear password field for security
         editTextPassword.setText("");
         editTextPassword.requestFocus();
     }

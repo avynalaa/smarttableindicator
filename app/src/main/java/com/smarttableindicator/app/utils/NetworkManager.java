@@ -23,7 +23,6 @@ public class NetworkManager {
     private NetworkCallback networkCallback;
     private boolean isNetworkAvailable = false;
     
-    // Interface for network state callbacks
     public interface NetworkStateListener {
         void onNetworkAvailable();
         void onNetworkLost();
@@ -52,11 +51,9 @@ public class NetworkManager {
             return;
         }
         
-        // Create network callback for API 24+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             networkCallback = new NetworkCallback();
             
-            // Register for network changes
             NetworkRequest.Builder builder = new NetworkRequest.Builder();
             connectivityManager.registerNetworkCallback(builder.build(), networkCallback);
             Log.d(TAG, "Network callback registered");
@@ -64,7 +61,7 @@ public class NetworkManager {
             Log.w(TAG, "Network monitoring not fully supported on API < 24");
         }
         
-        // Notify initial state
+        
         if (isNetworkAvailable && listener != null) {
             listener.onNetworkAvailable();
         } else if (!isNetworkAvailable && listener != null) {
@@ -130,7 +127,6 @@ public class NetworkManager {
                 return hasInternet;
                 
             } else {
-                // Fallback for older Android versions
                 android.net.NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
                 boolean isConnected = networkInfo != null && networkInfo.isConnected();
                 Log.d(TAG, "Network status check (legacy): isConnected=" + isConnected);
