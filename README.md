@@ -3,8 +3,8 @@
 [![Android](https://img.shields.io/badge/Platform-Android-green.svg)](https://developer.android.com/)
 [![Firebase](https://img.shields.io/badge/Backend-Firebase-orange.svg)](https://firebase.google.com/)
 [![ESP32](https://img.shields.io/badge/Hardware-ESP32-blue.svg)](https://www.espressif.com/en/products/socs/esp32)
-[![Development](https://img.shields.io/badge/Status-In%20Development-red.svg)](#project-status)
-[![Updates](https://img.shields.io/badge/Updates-Periodic-brightgreen.svg)](#project-status)
+[![Development](https://img.shields.io/badge/Status-Work%20in%20Progress-orange.svg)](#work-in-progress)
+[![Thesis](https://img.shields.io/badge/Academic-Thesis%20Project-blue.svg)](#academic-context)
 [![License](https://img.shields.io/badge/License-Academic-yellow.svg)](#)
 
 > **Smart Table Status Indicator Berbasis ESP32 untuk Efisiensi Manajemen Meja pada Restoran Self-Serve**
@@ -15,13 +15,13 @@ An innovative Android application designed to revolutionize table management in 
 
 - [About](#about)
 - [Features](#features)
-- [Project Status](#project-status)
+- [Work in Progress](#work-in-progress)
 - [Screenshots](#screenshots)
 - [System Architecture](#system-architecture)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Configuration](#configuration)
-- [Usage](#usage)
+- [Research Methodology](#research-methodology)
+- [Technical Implementation](#technical-implementation)
+- [Exploring the Code](#exploring-the-code)
+- [Intended Functionality](#intended-functionality)
 - [Project Structure](#project-structure)
 - [Technologies Used](#technologies-used)
 - [Contributing](#contributing)
@@ -73,28 +73,31 @@ Our smart system provides:
 - **Settings**: App configuration and Firebase connection testing
 - **Profile**: Staff profile management with image upload
 
-## 🚧 Project Status
+## 🚧 Work in Progress
 
-> **⚠️ This is an ongoing academic project under active development!**
+> **This repository showcases an ongoing undergraduate thesis project currently under development.**
 
-### Current Status
-- 🔄 **In Development**: This project is actively being developed as part of a thesis research
-- 📱 **Prototype Stage**: The Android application is functional but may contain experimental features
-- 🔧 **Periodic Updates**: The codebase is regularly updated with improvements and new features
-- 📋 **Academic Purpose**: Primary focus is on research and educational objectives
+### Project Overview
+This is an **active research and development project** for my undergraduate thesis at Universitas Gunadarma. The Smart Table Indicator represents an innovative approach to restaurant management technology, combining IoT hardware with modern mobile applications.
 
-### 🎯 For Users & Reviewers
-**Want to try the app without the complexity of Android Studio setup?**
-- 📱 **APK Releases**: Check the [Releases](https://github.com/avynalaa/smarttableindicator/releases) section for downloadable APK files *(coming soon)*
-- 🎥 **Demo Videos**: Watch functionality demonstrations *(coming soon)*
-- 📊 **Live Demo**: Contact the author for demonstration sessions
+### Current Development Phase
+- 🔬 **Research Stage**: Conducting feasibility studies and system design
+- 💻 **Implementation**: Building the Android application and ESP32 integration
+- 📊 **Testing**: Evaluating system performance and user experience
+- 📝 **Documentation**: Preparing academic documentation and thesis materials
 
-Setting up Android Studio, SDK, and emulators just to test this app is honestly overkill for most users! I'll be adding easier ways to experience the project as development progresses.
+### What You Can Expect
+- **Regular Updates**: This repository is actively maintained with frequent commits
+- **Evolving Features**: New capabilities are continuously being added and refined
+- **Academic Focus**: Development prioritizes research objectives and educational value
+- **Future Completion**: A fully functional system will be available upon thesis completion
 
-### 📅 Update Schedule
-- **Weekly**: Bug fixes and minor improvements
-- **Bi-weekly**: Feature additions and enhancements
-- **Monthly**: Major updates and documentation improvements
+### 🎯 Final Product Vision
+Upon completion, this project will demonstrate:
+- Real-time table status monitoring in restaurant environments
+- Seamless integration between IoT sensors and mobile applications
+- Efficient staff workflow management through digital solutions
+- Scalable architecture suitable for various restaurant sizes
 
 ## 📸 Screenshots
 
@@ -113,125 +116,88 @@ Setting up Android Studio, SDK, and emulators just to test this app is honestly 
    Status Updates         Push Notifications     Management Tools
 ```
 
-## 🔧 Prerequisites
+## 🎓 Research Methodology
 
-Before you begin, ensure you have the following installed:
+This project employs a comprehensive research approach combining theoretical analysis with practical implementation:
 
-- **Android Studio** (Latest version recommended)
-- **JDK 11** or higher
-- **Android SDK** (API level 31-35)
-- **Google Services** plugin
-- **Firebase project** setup
-- **Internet connection** for Firebase synchronization
+### Development Approach
+- **Agile Methodology**: Iterative development with regular testing and refinement
+- **User-Centered Design**: Focus on restaurant staff workflow and usability
+- **IoT Integration**: Seamless connection between hardware sensors and software systems
+- **Academic Rigor**: Documented processes and measurable outcomes for thesis evaluation
 
-## 📦 Installation
+### Testing & Validation
+- **Prototype Testing**: Controlled environment validation of core functionalities
+- **Performance Analysis**: System response time and reliability measurements
+- **User Experience Studies**: Staff interaction and workflow efficiency assessment
+- **Scalability Testing**: Multi-device and multi-location capability evaluation
 
-> **💡 New Here?** If you just want to try the app, skip the complex setup below and check the [Project Status](#project-status) section for easier alternatives!
+## 🔍 Exploring the Code
 
-### For Developers & Contributors
+This repository contains the complete source code for the Smart Table Indicator system. The codebase is organized following Android development best practices and includes comprehensive documentation for academic review.
 
-#### 1. Clone the Repository
-```bash
-git clone https://github.com/avynalaa/smarttableindicator.git
-cd smarttableindicator
-```
+### Repository Structure
+The project follows standard Android application architecture with clear separation of concerns and modular design principles. All source code is available for academic review and educational purposes.
 
-#### 2. Open in Android Studio
-1. Launch Android Studio
-2. Select "Open an existing project"
-3. Navigate to the cloned repository folder
-4. Select the `SmartTableIndicator` directory
+### Code Quality & Standards
+- **Professional Structure**: Clean, well-organized codebase following industry standards
+- **Comprehensive Documentation**: Detailed code comments and documentation
+- **Modern Technologies**: Implementation using current Android development practices
+- **Academic Rigor**: Code developed with thesis requirements and academic review in mind
 
-#### 3. Sync Dependencies
-- Android Studio will automatically sync Gradle dependencies
-- If not, click "Sync Now" when prompted
+## 🏗️ Technical Implementation
 
-#### 4. Build the Project
-```bash
-./gradlew build
-```
+### System Architecture
+The Smart Table Indicator employs a three-tier architecture connecting IoT sensors, cloud infrastructure, and mobile interfaces. This design ensures scalability, reliability, and real-time data synchronization.
 
-## ⚙️ Configuration
+### Key Technologies
+- **Frontend**: Android SDK with Material Design principles
+- **Backend**: Firebase Realtime Database for instantaneous updates
+- **Hardware**: ESP32 microcontrollers for sensor data collection
+- **Communication**: RESTful APIs and WebSocket connections for real-time sync
 
-### Firebase Setup
-
-1. **Create Firebase Project**:
-   - Go to [Firebase Console](https://console.firebase.google.com/)
-   - Create a new project or use existing one
-
-2. **Add Android App**:
-   - Package name: `com.smarttableindicator.app`
-   - Download `google-services.json`
-   - Place it in `app/` directory (already included)
-
-3. **Enable Services**:
-   - **Realtime Database**: Enable and configure rules
-   - **Cloud Messaging**: Enable for push notifications
-   - **Analytics**: Optional but recommended
-
-4. **Database Structure**:
+### Database Design
+The system utilizes a NoSQL database structure optimized for real-time operations:
 ```json
 {
   "tables": {
     "table1": {
       "number": 1,
-      "status": "available"
-    },
-    "table2": {
-      "number": 2,
-      "status": "occupied"
+      "status": "available",
+      "timestamp": "2025-01-01T12:00:00Z"
     }
   }
 }
 ```
 
-### App Configuration
+### Security & Authentication
+- User authentication through Firebase Auth
+- Secure data transmission with HTTPS/WSS protocols
+- Role-based access control for staff management
 
-1. **Constants Configuration** (`app/src/main/java/com/smarttableindicator/app/config/Constants.java`):
-   - Update Firebase database URL if needed
-   - Configure table grid columns
-   - Set notification channel IDs
+## 🎯 Intended Functionality
 
-2. **Staff Credentials**:
-   - Configure initial staff login credentials
-   - Set up authentication rules in Firebase
+Upon project completion, the Smart Table Indicator will provide comprehensive restaurant management capabilities:
 
-## 🚀 Usage
+### Staff Interface
+- **Real-time Dashboard**: Live monitoring of all table statuses
+- **Intuitive Controls**: Simple, user-friendly interface for staff operations
+- **Smart Notifications**: Automated alerts for table status changes
+- **Profile Management**: Personalized staff accounts and preferences
 
-### For Restaurant Staff
+### Table Status Management
+- **Visual Indicators**: Color-coded system for immediate status recognition
+  - 🟢 **Available**: Ready for new customers
+  - 🔴 **Occupied**: Currently in use
+  - 🟡 **Cleaning Required**: Needs attention
+- **Automatic Updates**: Real-time synchronization across all devices
+- **Historical Data**: Usage patterns and analytics for optimization
 
-1. **Login**:
-   - Enter Staff ID and Password
-   - Access granted based on Firebase authentication
-
-2. **Dashboard Navigation**:
-   - **Dashboard**: View all table statuses in real-time
-   - **Statistics**: Analyze table usage patterns
-   - **Settings**: Configure app preferences and test connections
-   - **Help**: View app information and thesis details
-
-3. **Profile Management**:
-   - Click profile image to upload custom picture
-   - Images are stored locally with URI persistence
-
-4. **Table Monitoring**:
-   - Tables display in grid layout
-   - Color-coded status indicators:
-     - 🟢 **Green**: Available
-     - 🔴 **Red**: Occupied
-     - 🟡 **Yellow**: Dirty/Needs Cleaning
-
-### For System Administrators
-
-1. **Firebase Management**:
-   - Monitor database in Firebase Console
-   - Configure push notification campaigns
-   - Analyze usage through Firebase Analytics
-
-2. **Hardware Integration**:
-   - ESP32 nodes automatically update table statuses
-   - Real-time synchronization with mobile app
-   - Network connectivity monitoring
+### System Administration
+- **Cloud Dashboard**: Web-based management interface
+- **Performance Analytics**: Data-driven insights for restaurant operations
+- **Hardware Monitoring**: ESP32 device status and connectivity tracking
+- **Scalable Infrastructure**: Support for multiple restaurant locations
 
 ## 📁 Project Structure
 
