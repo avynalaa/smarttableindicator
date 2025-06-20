@@ -9,99 +9,70 @@
 
 > **Smart Table Status Indicator Berbasis ESP32 untuk Efisiensi Manajemen Meja pada Restoran Self-Serve**
 
-An innovative Android application designed to revolutionize table management in self-serve restaurants through real-time status monitoring using ESP32-based indicators and Firebase cloud integration.
+An IoT-based table management system for self-serve restaurants combining ESP32 hardware indicators with Android mobile application and Firebase cloud integration.
 
 ## 📋 Table of Contents
 
 - [About](#about)
 - [Features](#features)
 - [Work in Progress](#work-in-progress)
-- [Screenshots](#screenshots)
 - [System Architecture](#system-architecture)
 - [Research Methodology](#research-methodology)
 - [Technical Implementation](#technical-implementation)
-- [Exploring the Code](#exploring-the-code)
 - [Intended Functionality](#intended-functionality)
 - [Project Structure](#project-structure)
 - [Technologies Used](#technologies-used)
-- [Contributing](#contributing)
 - [Academic Context](#academic-context)
 - [Author](#author)
 - [License](#license)
+- [Acknowledgments](#acknowledgments)
 
 ## 📖 About
 
-The **Smart Table Indicator** is a comprehensive solution for modern restaurant management, specifically designed for self-serve establishments. This Android application works in conjunction with ESP32-based hardware indicators to provide real-time table status monitoring, enabling efficient table turnover and enhanced customer experience.
+The Smart Table Indicator addresses table management inefficiencies in self-serve restaurants through automated status monitoring. The system integrates ESP32-based hardware indicators with an Android application, enabling real-time table status tracking and staff workflow optimization.
 
 ### Problem Statement
-Traditional restaurants face challenges in:
-- Manual table status tracking
-- Inefficient table turnover management
-- Poor customer experience due to unavailable seating information
-- Staff workload in monitoring table availability
+Traditional restaurants face operational challenges including:
+- Manual table status tracking leading to inefficiencies
+- Poor visibility of table availability for both staff and customers
+- Delayed response to table cleaning requirements
+- Suboptimal table turnover management
 
-### Solution
-Our smart system provides:
-- **Real-time monitoring** of table statuses (Available, Occupied, Dirty)
-- **Automated status updates** through IoT integration
-- **Staff dashboard** for centralized management
-- **Firebase integration** for reliable cloud synchronization
-- **Push notifications** for immediate status alerts
+### Solution Approach
+The system provides automated table status monitoring through:
+- Real-time status indication via ESP32-based hardware
+- Centralized mobile application for staff management
+- Cloud-based data synchronization and storage
+- Automated notification system for status changes
 
 ## ✨ Features
 
-### 🎯 Core Features
-- **Real-time Table Monitoring**: Live status updates for all restaurant tables
-- **Multiple Status Types**: Available, Occupied, and Dirty status indicators
-- **Staff Authentication**: Secure login system for restaurant staff
-- **Profile Management**: Customizable staff profiles with image upload
-- **Responsive Grid Layout**: Optimized table view with configurable columns
-- **Network Status Monitoring**: Automatic network connectivity management
+### Core Functionality
+- Real-time table status monitoring and updates
+- Staff authentication and profile management
+- Push notifications for status changes
+- Network connectivity management and error handling
+- Responsive user interface with Material Design principles
 
-### 🔧 Technical Features
-- **Firebase Integration**: Real-time database synchronization
-- **Push Notifications**: FCM (Firebase Cloud Messaging) support
-- **Material Design**: Modern and intuitive user interface
-- **Navigation Drawer**: Easy access to all app sections
-- **Settings Management**: Configurable app preferences
-- **Error Handling**: Comprehensive error management system
-
-### 📱 User Interface
-- **Dashboard**: Central hub for table status overview
-- **Statistics**: Data visualization and analytics (placeholder)
-- **Help Section**: Comprehensive app information and thesis details
-- **Settings**: App configuration and Firebase connection testing
-- **Profile**: Staff profile management with image upload
+### Technical Features
+- Firebase Realtime Database integration
+- ESP32 hardware communication protocols
+- Comprehensive error handling and validation
+- Offline capability with data synchronization
+- Modular architecture for scalability
 
 ## 🚧 Work in Progress
 
-> **This repository showcases an ongoing undergraduate thesis project currently under development.**
+This repository contains an undergraduate thesis project currently under development at Universitas Gunadarma. The Smart Table Indicator represents research into IoT applications for restaurant management optimization.
 
-### Project Overview
-This is an **active research and development project** for my undergraduate thesis at Universitas Gunadarma. The Smart Table Indicator represents an innovative approach to restaurant management technology, combining IoT hardware with modern mobile applications.
+### Development Status
+- **Research Phase**: System design and feasibility analysis
+- **Implementation**: Android application and ESP32 integration development
+- **Testing**: Performance evaluation and system validation
+- **Documentation**: Academic documentation and thesis preparation
 
-### Current Development Phase
-- 🔬 **Research Stage**: Conducting feasibility studies and system design
-- 💻 **Implementation**: Building the Android application and ESP32 integration
-- 📊 **Testing**: Evaluating system performance and user experience
-- 📝 **Documentation**: Preparing academic documentation and thesis materials
-
-### What You Can Expect
-- **Regular Updates**: This repository is actively maintained with frequent commits
-- **Evolving Features**: New capabilities are continuously being added and refined
-- **Academic Focus**: Development prioritizes research objectives and educational value
-- **Future Completion**: A fully functional system will be available upon thesis completion
-
-### 🎯 Final Product Vision
-Upon completion, this project will demonstrate:
-- Real-time table status monitoring in restaurant environments
-- Seamless integration between IoT sensors and mobile applications
-- Efficient staff workflow management through digital solutions
-- Scalable architecture suitable for various restaurant sizes
-
-## 📸 Screenshots
-
-*Screenshots and demo materials coming soon...*
+### Project Scope
+The system is designed to demonstrate the integration of IoT sensors with mobile applications for restaurant management. Development focuses on research objectives and academic requirements rather than commercial deployment.
 
 ## 🏗️ System Architecture
 
@@ -118,46 +89,31 @@ Upon completion, this project will demonstrate:
 
 ## 🎓 Research Methodology
 
-This project employs a comprehensive research approach combining theoretical analysis with practical implementation:
-
 ### Development Approach
-- **Agile Methodology**: Iterative development with regular testing and refinement
-- **User-Centered Design**: Focus on restaurant staff workflow and usability
-- **IoT Integration**: Seamless connection between hardware sensors and software systems
-- **Academic Rigor**: Documented processes and measurable outcomes for thesis evaluation
+- Agile methodology with iterative development cycles
+- User-centered design focusing on restaurant staff workflows
+- Integration testing between hardware and software components
+- Performance analysis and system optimization
 
-### Testing & Validation
-- **Prototype Testing**: Controlled environment validation of core functionalities
-- **Performance Analysis**: System response time and reliability measurements
-- **User Experience Studies**: Staff interaction and workflow efficiency assessment
-- **Scalability Testing**: Multi-device and multi-location capability evaluation
-
-## 🔍 Exploring the Code
-
-This repository contains the complete source code for the Smart Table Indicator system. The codebase is organized following Android development best practices and includes comprehensive documentation for academic review.
-
-### Repository Structure
-The project follows standard Android application architecture with clear separation of concerns and modular design principles. All source code is available for academic review and educational purposes.
-
-### Code Quality & Standards
-- **Professional Structure**: Clean, well-organized codebase following industry standards
-- **Comprehensive Documentation**: Detailed code comments and documentation
-- **Modern Technologies**: Implementation using current Android development practices
-- **Academic Rigor**: Code developed with thesis requirements and academic review in mind
+### Validation Methods
+- Controlled environment testing of core functionalities
+- System response time and reliability measurements
+- User interface usability assessment
+- Multi-device synchronization validation
 
 ## 🏗️ Technical Implementation
 
 ### System Architecture
-The Smart Table Indicator employs a three-tier architecture connecting IoT sensors, cloud infrastructure, and mobile interfaces. This design ensures scalability, reliability, and real-time data synchronization.
+Three-tier architecture connecting IoT sensors, cloud infrastructure, and mobile interfaces. The design ensures real-time data synchronization, scalability, and system reliability.
 
 ### Key Technologies
-- **Frontend**: Android SDK with Material Design principles
-- **Backend**: Firebase Realtime Database for instantaneous updates
-- **Hardware**: ESP32 microcontrollers for sensor data collection
-- **Communication**: RESTful APIs and WebSocket connections for real-time sync
+- **Frontend**: Android SDK with Material Design Components
+- **Backend**: Firebase Realtime Database and Cloud Messaging
+- **Hardware**: ESP32 microcontrollers with WiFi connectivity
+- **Communication**: RESTful APIs and WebSocket protocols
 
 ### Database Design
-The system utilizes a NoSQL database structure optimized for real-time operations:
+NoSQL database structure optimized for real-time operations:
 ```json
 {
   "tables": {
@@ -170,34 +126,31 @@ The system utilizes a NoSQL database structure optimized for real-time operation
 }
 ```
 
-### Security & Authentication
-- User authentication through Firebase Auth
-- Secure data transmission with HTTPS/WSS protocols
-- Role-based access control for staff management
+### Security Implementation
+- Firebase Authentication for user management
+- HTTPS/WSS protocols for secure data transmission
+- Input validation and sanitization throughout the system
 
 ## 🎯 Intended Functionality
 
-Upon project completion, the Smart Table Indicator will provide comprehensive restaurant management capabilities:
-
 ### Staff Interface
-- **Real-time Dashboard**: Live monitoring of all table statuses
-- **Intuitive Controls**: Simple, user-friendly interface for staff operations
-- **Smart Notifications**: Automated alerts for table status changes
-- **Profile Management**: Personalized staff accounts and preferences
+- Real-time dashboard displaying all table statuses
+- User authentication and profile management
+- Push notifications for immediate status alerts
+- Settings configuration and system preferences
 
 ### Table Status Management
-- **Visual Indicators**: Color-coded system for immediate status recognition
-  - 🟢 **Available**: Ready for new customers
-  - 🔴 **Occupied**: Currently in use
-  - 🟡 **Cleaning Required**: Needs attention
-- **Automatic Updates**: Real-time synchronization across all devices
-- **Historical Data**: Usage patterns and analytics for optimization
+- Visual status indicators with LED hardware integration:
+  - 🟢 **Green LED**: Table occupied
+  - 🔴 **Red LED**: Table requires cleaning
+  - **No Light**: Table available for seating
+- Automatic status updates across all connected devices
+- Historical data collection for usage analysis
 
 ### System Administration
-- **Cloud Dashboard**: Web-based management interface
-- **Performance Analytics**: Data-driven insights for restaurant operations
-- **Hardware Monitoring**: ESP32 device status and connectivity tracking
-- **Scalable Infrastructure**: Support for multiple restaurant locations
+- Cloud-based data management through Firebase Console
+- Real-time monitoring of hardware device connectivity
+- Performance analytics and system health monitoring
 
 ## 📁 Project Structure
 
@@ -207,35 +160,18 @@ SmartTableIndicator/
 │   ├── src/main/
 │   │   ├── java/com/smarttableindicator/app/
 │   │   │   ├── activities/          # Activity classes
-│   │   │   │   ├── MainActivity.java
-│   │   │   │   ├── LoginActivity.java
-│   │   │   │   ├── SettingsActivity.java
-│   │   │   │   └── HelpActivity.java
 │   │   │   ├── adapters/           # RecyclerView adapters
-│   │   │   │   └── TableAdapter.java
 │   │   │   ├── config/             # Configuration constants
-│   │   │   │   └── Constants.java
 │   │   │   ├── models/             # Data models
-│   │   │   │   ├── TableModel.java
-│   │   │   │   └── FirebaseTableData.java
 │   │   │   ├── services/           # Background services
-│   │   │   │   ├── NotificationHelper.java
-│   │   │   │   └── SmartTableMessagingService.java
 │   │   │   └── utils/              # Utility classes
-│   │   │       ├── NetworkManager.java
-│   │   │       ├── FirebaseErrorHandler.java
-│   │   │       └── ValidationUtils.java
-│   │   ├── res/                    # Resources
-│   │   │   ├── layout/             # XML layouts
-│   │   │   ├── drawable/           # Icons and graphics
-│   │   │   ├── values/             # Strings, colors, themes
-│   │   │   └── menu/               # Menu resources
+│   │   ├── res/                    # Resources (layouts, drawables, values)
 │   │   └── AndroidManifest.xml
 │   ├── build.gradle.kts           # App-level build configuration
 │   └── google-services.json       # Firebase configuration
 ├── build.gradle.kts               # Project-level build configuration
 ├── settings.gradle.kts            # Project settings
-└── README.md                      # This file
+└── README.md                      # Project documentation
 ```
 
 ## 🛠️ Technologies Used
@@ -246,7 +182,7 @@ SmartTableIndicator/
 - **Architecture**: MVP pattern with lifecycle-aware components
 - **Build System**: Gradle with Kotlin DSL
 
-### Backend & Cloud Services
+### Backend Services
 - **Database**: Firebase Realtime Database
 - **Authentication**: Firebase Authentication
 - **Push Notifications**: Firebase Cloud Messaging (FCM)
@@ -254,7 +190,7 @@ SmartTableIndicator/
 
 ### Hardware Integration
 - **Microcontroller**: ESP32
-- **Communication**: WiFi, HTTP/HTTPS
+- **Communication**: WiFi, HTTP/HTTPS protocols
 - **Sensors**: Custom table status indicators
 
 ### Development Tools
@@ -262,24 +198,6 @@ SmartTableIndicator/
 - **Version Control**: Git & GitHub
 - **Dependency Management**: Gradle
 - **Testing**: JUnit, Espresso
-
-## 🤝 Contributing
-
-> **📝 Active Development Notice**: This project is under active development with regular updates. Check the latest commits before contributing to avoid conflicts!
-
-This project is part of an academic thesis. While contributions are welcome for educational purposes, please note:
-
-1. **Fork** the repository
-2. **Create** a feature branch (`git checkout -b feature/AmazingFeature`)
-3. **Commit** your changes (`git commit -m 'Add some AmazingFeature'`)
-4. **Push** to the branch (`git push origin feature/AmazingFeature`)
-5. **Open** a Pull Request
-
-### Code Standards
-- Follow Java coding conventions
-- Use meaningful variable and method names
-- Add comments for complex logic
-- Ensure compatibility with Android API 31+
 
 ## 🎓 Academic Context
 
@@ -299,7 +217,7 @@ This project is part of an academic thesis. While contributions are welcome for 
 ### Key Contributions
 - Integration of ESP32 hardware with Android mobile application
 - Real-time synchronization using Firebase cloud services
-- User-friendly interface design following Material Design principles
+- User interface design following Material Design principles
 - Comprehensive error handling and network management
 
 ## 👨‍💻 Author
@@ -315,25 +233,9 @@ This project is developed for academic purposes as part of a university thesis. 
 
 © 2025 Vanya Alzenaya Agam. Universitas Gunadarma.
 
----
+## 🌟 Acknowledgments
 
-### 🌟 Acknowledgments
-
-- **Universitas Gunadarma** for academic support
-- **Firebase** for cloud infrastructure
-- **Android Developer Community** for resources and documentation
-- **ESP32 Community** for hardware integration guidance
-
-### 📞 Support
-
-For questions, issues, or academic inquiries, please:
-1. **Create an issue** in this repository (fastest response for bugs/features)
-2. **Contact the author** via email for academic or collaboration inquiries
-3. **Check recent commits** - your issue might already be fixed in the latest update!
-4. **Refer to the Help section** within the app for basic troubleshooting
-
-> **⏰ Response Time**: Since this is an active project, expect faster responses than typical academic repositories!
-
----
-
-**Made with ❤️ for academic excellence and innovation in restaurant technology** 
+- **Universitas Gunadarma** for academic support and resources
+- **Firebase** for cloud infrastructure and development tools
+- **Android Developer Community** for documentation and best practices
+- **ESP32 Community** for hardware integration guidance and support 
